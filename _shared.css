@@ -12,8 +12,8 @@
   --muted2: #888;
   --border: rgba(127,119,221,0.12);
   --border2: rgba(255,255,255,0.06);
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'roboto', sans-serif;
+  --font-body: 'roboto', sans-serif;
   --radius: 12px;
   --radius-sm: 8px;
 }
