@@ -59,7 +59,7 @@ img { display: block; max-width: 100%; }
 }
 .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 0 20px var(--accent-glow); }
 .btn-primary:hover { background: #9690e8; box-shadow: 0 0 32px var(--accent-glow); transform: translateY(-1px); }
-.btn-ghost { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.18); }
+.btn-ghost { background: var(--accent-glow); color: var(--white); border: 1.5px solid rgba(255,255,255,0.18); }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
 .btn-outline-accent { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
 .btn-outline-accent:hover { background: var(--accent); color: #fff; box-shadow: 0 0 20px var(--accent-glow); }
