@@ -1,15 +1,15 @@
 /* ─── SHARED STYLES — OTG Tech Hub ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bg: #0a0a0c;
-  --surface: #111116;
-  --surface2: #16161d;
-  --accent: #7F77DD;
-  --accent-dim: rgba(127,119,221,0.15);
-  --accent-glow: rgba(127,119,221,0.4);
-  --white: #e5e5e5;
-  --muted: #555;
-  --muted2: #888;
+  --bg: #ffffff;
+--surface: #f4f6f8;
+--surface2: #eaf0f3;
+--accent: #00C2CB;
+--accent-dim: rgba(0,194,203,0.15);
+--accent-glow: rgba(0,194,203,0.4);
+  --white: #111111;
+  --muted: #888888;
+  --muted2: #555555;
   --border: rgba(127,119,221,0.12);
   --border2: rgba(255,255,255,0.06);
   --font-display: 'ROBOTO', sans-serif;
@@ -67,7 +67,7 @@ img { display: block; max-width: 100%; }
 /* NAVBAR */
 .navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: rgba(10,10,12,0.88);
+  background: rgba(255,255,255,0.95);
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border2);
 }
@@ -75,13 +75,12 @@ img { display: block; max-width: 100%; }
   display: flex; align-items: center; justify-content: space-between;
   height: 64px; gap: 24px;
 }
-.nav-logo { font-family: var(--font-display); font-size: 18px; font-weight: 800; letter-spacing: -0.02em; flex-shrink: 0; }
-.nav-logo span { color: var(--accent); }
+.nav-logo { flex-shrink: 0; display: flex; align-items: center; }
+.nav-logo img { height: 200px; width: auto; }
 .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
 .nav-links a {
   padding: 6px 12px; border-radius: 6px;
-  font-size: 13px; font-weight: 500; color: var(--muted2);
-  transition: color 0.2s, background 0.2s;
+  font-size: 13px; font-weight: 500; color: #333333;  transition: color 0.2s, background 0.2s;
 }
 .nav-links a:hover { color: var(--white); background: var(--accent-dim); }
 .nav-links a.active { color: var(--accent); background: var(--accent-dim); }
@@ -93,7 +92,7 @@ img { display: block; max-width: 100%; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* FOOTER */
-.footer { background: #080810; border-top: 1px solid rgba(127,119,221,0.15); padding: 32px 0; }
+.footer { background: #111111; border-top: 1px solid rgba(127,119,221,0.15); padding: 32px 0; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
 .footer-logo { font-family: var(--font-display); font-size: 16px; font-weight: 800; }
 .footer-logo span { color: var(--accent); }
