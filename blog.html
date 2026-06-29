@@ -16,10 +16,12 @@
 .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:48px; }
 .blog-card { background:var(--surface); border:1px solid var(--border2); border-radius:var(--radius); overflow:hidden; transition:border-color 0.25s,transform 0.25s; }
 .blog-card:hover { border-color:var(--accent); transform:translateY(-4px); }
-.blog-thumb { height:160px; background:var(--surface2); display:flex; align-items:center; justify-content:center; }
+.blog-thumb { height:160px; background:var(--surface2); display:flex; align-items:center; justify-content:center; overflow:hidden; }
 .blog-thumb i { font-size:40px; color:rgba(127,119,221,0.3); }
+.blog-thumb img { width:100%; height:100%; object-fit:cover; }
 .blog-body-inner { padding:22px; }
 .blog-cat { display:inline-block; background:var(--accent); color:#fff; font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:3px 10px; border-radius:100px; margin-bottom:12px; }
+.blog-cat.linkedin-cat { background:#0A66C2; }
 .blog-title { font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--white); margin-bottom:10px; line-height:1.4; }
 .blog-meta { font-size:11px; color:var(--muted); margin-bottom:14px; }
 .blog-excerpt { font-size:13px; color:var(--muted2); line-height:1.6; margin-bottom:16px; }
@@ -39,10 +41,12 @@
 <body>
 <nav class="navbar">
   <div class="container nav-inner">
-<a href="index.html" class="nav-logo"><img src="https://res.cloudinary.com/dcluwovzm/image/upload/v1780544190/logo-removebg-preview_u4eqe4.png" alt="OTG Tech Hub" height="200" /></a>    <ul class="nav-links" id="navLinks">
+    <a href="index.html" class="nav-logo"><img src="https://res.cloudinary.com/dcluwovzm/image/upload/v1780544190/logo-removebg-preview_u4eqe4.png" alt="OTG Tech Hub" height="40" /></a>
+    <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
       <li><a href="portfolio.html">Portfolio</a></li><li><a href="services.html">Services</a></li>
-      <li><a href="case-studies.html">Case Studies</a></li><li><a href="blog.html" class="active">Blog</a></li><li><a href="contact.html">Contact</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li><li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li><li><a href="contact.html">Contact</a></li>
     </ul>
     <a href="contact.html" class="btn btn-primary nav-cta">Book a Demo</a>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
@@ -60,6 +64,26 @@
 <div class="blog-body">
   <div class="container">
     <div class="blog-grid">
+      <div class="blog-card reveal">
+        <div class="blog-thumb"><img src="https://res.cloudinary.com/dcluwovzm/image/upload/v1782738835/ChatGPT_Image_Jun_29_2026_02_06_18_PM_pfvluy.png" alt="How Much Does a 3D Product Configurator Cost in 2026?" /></div>
+        <div class="blog-body-inner">
+          <span class="blog-cat linkedin-cat">LinkedIn</span>
+          <div class="blog-title">How Much Does a 3D Product Configurator Cost in 2026?</div>
+          <div class="blog-meta">Jun 2026 &nbsp;·&nbsp; 4 min read</div>
+          <p class="blog-excerpt">Pricing for a 3D configurator depends on complexity, platform integration, and scope. We break down what really drives the cost — and how to budget for one in 2026.</p>
+          <a href="https://www.linkedin.com/pulse/how-much-does-3d-product-configurator-cost-2026-adebisi-sodiq-adewale-wlgqe/" target="_blank" class="blog-read">Read on LinkedIn →</a>
+        </div>
+      </div>
+      <div class="blog-card reveal">
+        <div class="blog-thumb"><img src="https://res.cloudinary.com/dcluwovzm/image/upload/v1782738842/ChatGPT_Image_Jun_29_2026_02_12_25_PM_fsgpce.png" alt="How to Hire a 3D Product Configurator Developer in Nigeria" /></div>
+        <div class="blog-body-inner">
+          <span class="blog-cat linkedin-cat">LinkedIn</span>
+          <div class="blog-title">How to Hire a 3D Product Configurator Developer in Nigeria</div>
+          <div class="blog-meta">Jun 2026 &nbsp;·&nbsp; 4 min read</div>
+          <p class="blog-excerpt">Finding the right developer for your 3D configurator project in Nigeria takes more than a quick search. Here's what to look for, what to ask, and red flags to avoid.</p>
+          <a href="https://www.linkedin.com/pulse/how-hire-3d-product-configurator-developer-nigeria-sodiq-adewale-e69ie/" target="_blank" class="blog-read">Read on LinkedIn →</a>
+        </div>
+      </div>
       <div class="blog-card reveal">
         <div class="blog-thumb"><i class="ti ti-article"></i></div>
         <div class="blog-body-inner">
@@ -134,7 +158,7 @@
 </div>
 
 <footer class="footer"><div class="container footer-inner">
-<div class="footer-logo"><img src="https://res.cloudinary.com/dcluwovzm/image/upload/v1780544190/logo-removebg-preview_u4eqe4.png" alt="OTG Tech Hub" height="200" /></div>    <nav class="footer-nav">
+  <div class="footer-logo"><img src="https://res.cloudinary.com/dcluwovzm/image/upload/v1780544190/logo-removebg-preview_u4eqe4.png" alt="OTG Tech Hub" height="36" /></div>
   <nav class="footer-nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="services.html">Services</a><a href="case-studies.html">Case Studies</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
   <div class="footer-copy">© 2026 OTG Tech Hub. All rights reserved.</div>
 </div></footer>
