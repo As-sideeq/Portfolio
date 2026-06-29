@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Testimonials — OTG Tech Hub</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+<link rel="stylesheet" href="_shared.css" />
+<style>
+.page-hero { padding:130px 0 60px; background:var(--surface2); border-bottom:1px solid var(--border2); }
+.page-hero h1 { font-family:var(--font-display); font-size:clamp(28px,5vw,52px); font-weight:800; line-height:1.1; }
+.page-hero h1 span { color:var(--accent); }
+.page-hero p { color:var(--muted2); max-width:540px; margin-top:14px; font-size:16px; }
+
+/* STATS STRIP */
+.stats-strip { padding:50px 0; border-bottom:1px solid var(--border2); }
+.stats-row { display:grid; grid-template-columns:repeat(4,1fr); }
+.stat-box { text-align:center; padding:20px; border-right:1px solid var(--border2); }
+.stat-box:last-child { border-right:none; }
+.stat-num { font-family:var(--font-display); font-size:38px; font-weight:800; color:var(--accent); line-height:1; }
+.stat-lbl { font-size:12px; color:var(--muted2); margin-top:6px; }
+
+/* TESTIMONIALS GRID */
+.testimonials-body { padding:70px 0; }
+.t-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-bottom:60px; }
+.t-card {
+  background:var(--surface); border:1px solid var(--border2);
+  border-left:3px solid var(--accent); border-radius:var(--radius);
+  padding:30px; transition:border-color 0.25s, transform 0.25s;
+  display:flex; flex-direction:column; gap:0;
+}
+.t-card:hover { border-color:var(--accent); transform:translateY(-4px); box-shadow:0 8px 32px rgba(127,119,221,0.15); }
+.t-top { display:flex; align-items:center; gap:14px; margin-bottom:16px; }
+.t-avatar {
+  width:60px; height:60px; border-radius:50%;
+  background:var(--accent); display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff;
+  flex-shrink:0; overflow:hidden;
+}
+.t-avatar img { width:100%; height:100%; object-fit:cover; }
+.t-meta { flex:1; }
+.t-name { font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--white); }
+.t-role { font-size:12px; color:var(--muted2); margin-top:2px; }
+.t-stars { color:var(--accent); font-size:15px; margin-bottom:14px; letter-spacing:2px; }
+.t-quote { font-size:14px; color:var(--muted2); font-style:italic; line-height:1.75; flex:1; }
+.t-tag { display:inline-block; margin-top:16px; font-size:10px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); background:var(--accent-dim); border:1px solid var(--border); border-radius:100px; padding:3px 10px; }
+
+/* FEATURED TESTIMONIAL */
+.featured-section { padding:0 0 70px; }
+.featured-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); padding:48px 52px;
+  position:relative; overflow:hidden; text-align:center;
+}
+.featured-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--accent),transparent); }
+.quote-mark { font-family:var(--font-display); font-size:100px; line-height:0.6; color:rgba(127,119,221,0.12); margin-bottom:24px; display:block; }
+.featured-quote { font-family:var(--font-display); font-size:clamp(16px,2.5vw,22px); font-weight:600; color:var(--white); line-height:1.55; max-width:720px; margin:0 auto 32px; font-style:italic; }
+.featured-avatar {
+  width:72px; height:72px; border-radius:50%;
+  background:var(--accent); display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display); font-size:22px; font-weight:800; color:#fff;
+  margin:0 auto 12px; overflow:hidden;
+}
+.featured-avatar img { width:100%; height:100%; object-fit:cover; }
+.featured-name { font-family:var(--font-display); font-size:16px; font-weight:700; }
+.featured-role { font-size:13px; color:var(--muted2); margin-top:4px; }
+.featured-stars { color:var(--accent); font-size:18px; margin:10px 0 0; letter-spacing:3px; }
+
+/* BRANDS STRIP */
+.brands-section { padding:50px 0 80px; background:var(--surface2); }
+.brands-label { font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); text-align:center; margin-bottom:24px; }
+.brands-row { display:flex; justify-content:center; align-items:center; gap:14px; flex-wrap:wrap; }
+.brand-pill { background:var(--surface); border:1px solid var(--border2); border-radius:8px; padding:12px 28px; font-size:11px; font-weight:600; color:var(--muted); letter-spacing:0.05em; transition:border-color 0.2s, color 0.2s; }
+.brand-pill:hover { border-color:var(--accent); color:var(--accent); }
+
+/* CTA */
+.cta-band { padding:70px 0; text-align:center; }
+.cta-band h2 { font-family:var(--font-display); font-size:clamp(22px,4vw,36px); font-weight:800; margin-bottom:12px; }
+.cta-band p { color:var(--muted2); font-size:15px; margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto; }
+.cta-buttons { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+@media(max-width:768px){
+  .t-grid { grid-template-columns:1fr; }
+  .stats-row { grid-template-columns:1fr 1fr; }
+  .stat-box:nth-child(2) { border-right:none; }
+  .stat-box { border-bottom:1px solid var(--border2); }
+  .featured-card { padding:32px 24px; }
+}
+@media(min-width:769px) and (max-width:1024px){
+  .t-grid { grid-template-columns:1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">OTG <span>Tech Hub</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="testimonials.html" class="active">Testimonials</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary nav-cta">Book a Demo</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container reveal">
+    <div class="section-label">Social proof</div>
+    <h1>What clients <span>say</span></h1>
+    <p>Don't take our word for it — here's what the brands we've worked with have to say about the results.</p>
+  </div>
+</div>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-row reveal">
+      <div class="stat-box"><div class="stat-num">40+</div><div class="stat-lbl">Happy clients</div></div>
+      <div class="stat-box"><div class="stat-num">98%</div><div class="stat-lbl">Satisfaction rate</div></div>
+      <div class="stat-box"><div class="stat-num">5★</div><div class="stat-lbl">Average rating</div></div>
+      <div class="stat-box"><div class="stat-num">100%</div><div class="stat-lbl">Would recommend</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED TESTIMONIAL -->
+<div class="featured-section" style="padding-top:70px;">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:40px">
+      <div class="section-label">Featured</div>
+      <h2 class="section-title" style="margin-bottom:0">A word from our <span>clients</span></h2>
+    </div>
+    <div class="featured-card reveal">
+      <span class="quote-mark">"</span>
+      <p class="featured-quote">OTG Tech Hub didn't just build us a configurator — they completely changed how our customers interact with our products online. The return rate drop alone justified the entire investment within the first quarter. I can't recommend them highly enough.</p>
+      <!-- Replace src with client photo or brand logo URL -->
+      <div class="featured-avatar">JM</div>
+      <!-- Replace src with client photo or brand logo URL -->
+      <div class="featured-name">James Mitchell</div>
+      <div class="featured-role">Head of E-commerce, SoleCraft Brands</div>
+      <div class="featured-stars">★★★★★</div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS GRID -->
+<div class="testimonials-body">
+  <div class="container">
+    <div class="t-grid">
+
+      <div class="t-card reveal">
+        <div class="t-top">
+          <!-- Replace src with client photo or brand logo URL -->
+          <div class="t-avatar">AO</div>
+          <!-- Replace src with client photo or brand logo URL -->
+          <div class="t-meta">
+            <div class="t-name">Amara Osei</div>
+            <div class="t-role">Director of Digital, Habitat Living</div>
+          </div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"Working with OTG was seamless from brief to launch. The AR placement feature has become our most talked-about differentiator. Customers love it and so does our sales team."</p>
+        <span class="t-tag">Furniture · AR Viewer</span>
+      </div>
+
+      <div class="t-card reveal">
+        <div class="t-top">
+          <!-- Replace src with client photo or brand logo URL -->
+          <div class="t-avatar">LP</div>
+          <!-- Replace src with client photo or brand logo URL -->
+          <div class="t-meta">
+            <div class="t-name">Lena Petersen</div>
+            <div class="t-role">Product Manager, MotorGroup Europe</div>
+          </div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"The quality of the Three.js work is exceptional — the paint reflection alone convinced our board to expand the project. On time, on budget, and genuinely beyond brief."</p>
+        <span class="t-tag">Automotive · Configurator</span>
+      </div>
+
+      <div class="t-card reveal">
+        <div class="t-top">
+          <!-- Replace src with client photo or brand logo URL -->
+          <div class="t-avatar">DK</div>
+          <!-- Replace src with client photo or brand logo URL -->
+          <div class="t-meta">
+            <div class="t-name">David Kim</div>
+            <div class="t-role">CEO, LuxeLighting Co.</div>
+          </div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"We were sceptical about the ROI of a 3D configurator for lighting products. Three months after launch, our average order value had gone up 28%. Completely converted now."</p>
+        <span class="t-tag">Retail · Product Builder</span>
+      </div>
+
+      <div class="t-card reveal">
+        <div class="t-top">
+          <!-- Replace src with client photo or brand logo URL -->
+          <div class="t-avatar">SR</div>
+          <!-- Replace src with client photo or brand logo URL -->
+          <div class="t-meta">
+            <div class="t-name">Sofia Reyes</div>
+            <div class="t-role">E-commerce Lead, Moda Jewels</div>
+          </div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"The jewellery customiser OTG built for us is genuinely beautiful. Our customers spend an average of 6 minutes in the configurator before adding to cart. That kind of engagement is unheard of for us."</p>
+        <span class="t-tag">Jewellery · AR/VR</span>
+      </div>
+
+      <div class="t-card reveal">
+        <div class="t-top">
+          <!-- Replace src with client photo or brand logo URL -->
+          <div class="t-avatar">MT</div>
+          <!-- Replace src with client photo or brand logo URL -->
+          <div class="t-meta">
+            <div class="t-name">Marcus Taylor</div>
+            <div class="t-role">Head of Product, IndustrialBuild Ltd.</div>
+          </div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"We needed a configurator for complex industrial parts with hundreds of variants. OTG handled the scope without breaking a sweat. The delivery timeline was kept throughout. Solid team."</p>
+        <span class="t-tag">Manufacturing · WebGL</span>
+      </div>
+
+      <div class="t-card reveal">
+        <div class="t-top">
+          <!-- Replace src with client photo or brand logo URL -->
+          <div class="t-avatar">FN</div>
+          <!-- Replace src with client photo or brand logo URL -->
+          <div class="t-meta">
+            <div class="t-name">Fatima Nwosu</div>
+            <div class="t-role">Digital Director, HomeForm Nigeria</div>
+          </div>
+        </div>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"As a Nigerian brand, we weren't sure if a 3D configurator was for us. OTG proved us completely wrong. The tool works flawlessly on mobile, even on slower connections. Our customers are obsessed."</p>
+        <span class="t-tag">Furniture · 360° Viewer</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- BRANDS STRIP -->
+<div class="brands-section">
+  <div class="container">
+    <div class="brands-label reveal">Trusted by brands across retail, manufacturing & beyond</div>
+    <div class="brands-row reveal">
+      <!-- Replace with actual brand logo images -->
+      <div class="brand-pill">Brand Logo</div>
+      <div class="brand-pill">Brand Logo</div>
+      <div class="brand-pill">Brand Logo</div>
+      <div class="brand-pill">Brand Logo</div>
+      <div class="brand-pill">Brand Logo</div>
+      <!-- Replace with actual brand logo images -->
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="container reveal">
+    <h2>Ready to join them?</h2>
+    <p>Book a free 30-minute demo and let's talk about what a configurator could do for your brand.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn btn-primary"><i class="ti ti-calendar"></i> Book a Free Demo</a>
+      <a href="case-studies.html" class="btn btn-ghost">See Case Studies</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-logo">OTG <span>Tech Hub</span></div>
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="footer-copy">© 2026 OTG Tech Hub. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="_shared.js"></script>
+</body>
+</html>
