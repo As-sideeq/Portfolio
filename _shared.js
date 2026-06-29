@@ -1,4 +1,20 @@
 // ─── SHARED JS — OTG Tech Hub ───
+
+//Google Analytics
+(function() {
+  var script = document.createElement('script');
+
+
+  script.async = true;
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-54CKTR1JLG';
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-54CKTR1JLG');
+  window.gtag = gtag;})();
+
 document.addEventListener('DOMContentLoaded', () => {
   // Hamburger
   const hamburger = document.getElementById('hamburger');
