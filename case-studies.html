@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Case Studies — OTG Tech Hub</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
@@ -40,10 +44,12 @@
 <body>
 <nav class="navbar">
   <div class="container nav-inner">
-<a href="index.html" class="nav-logo"><img src="https://res.cloudinary.com/dcluwovzm/image/upload/v1780544190/logo-removebg-preview_u4eqe4.png" alt="OTG Tech Hub" height="200" /></a>    <ul class="nav-links" id="navLinks">
+    <a href="index.html" class="nav-logo"><img src="https://res.cloudinary.com/dcluwovzm/image/upload/v1780544190/logo-removebg-preview_u4eqe4.png" alt="OTG Tech Hub" height="40" /></a>
+    <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
       <li><a href="portfolio.html">Portfolio</a></li><li><a href="services.html">Services</a></li>
-      <li><a href="case-studies.html" class="active">Case Studies</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
+      <li><a href="case-studies.html" class="active">Case Studies</a></li><li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
     </ul>
     <a href="contact.html" class="btn btn-primary nav-cta">Book a Demo</a>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
@@ -60,56 +66,82 @@
 
 <div class="cs-body">
   <div class="container">
+    <!-- CASE STUDY 1 — OEM EXTINGUISHERS -->
     <div class="case-study-card reveal">
       <div class="case-left">
-        <div class="case-project">Sneaker Brand</div>
-        <span class="case-industry">Retail</span>
+        <div class="case-project">OEM Extinguishers</div>
+        <span class="case-industry">Automotive Safety / Manufacturing</span>
         <div class="case-challenge-label">The challenge</div>
-        <p>A leading sneaker label needed to reduce costly product returns driven by customers misinterpreting colours and materials in flat photography. We built a real-time WebGL configurator with photorealistic material rendering, letting customers inspect every angle before checkout.</p>
-        <div class="case-tech"><span class="case-tech-tag">WebGL</span><span class="case-tech-tag">Three.js</span><span class="case-tech-tag">Shopify</span></div>
+        <p>OEM Extinguishers sells high-end fire extinguishers specifically fitted for luxury cars like Porsche and BMW. Their customers are particular — they want their extinguisher to match their car's exact paint colour code and need to see exactly how it will look mounted on the bucket seat before placing an order. Static product photos couldn't communicate this level of personalisation, leading to hesitation, long sales cycles, and frequent back-and-forth enquiries.</p>
+        <p>OTG Tech Hub built a real-time 3D configurator where customers select their Porsche or BMW colour code (or enter any custom colour), see the extinguisher update live in 3D, and preview exactly how it looks mounted on a bucket seat — all before checkout.</p>
+        <div class="case-tech">
+          <span class="case-tech-tag">Three.js</span>
+          <span class="case-tech-tag">WebGL</span>
+          <span class="case-tech-tag">React</span>
+          <span class="case-tech-tag">Shopify</span>
+          <span class="case-tech-tag">PBR Materials</span>
+        </div>
       </div>
       <div class="case-right">
         <div class="results-label">Results</div>
         <div class="case-metrics">
-          <div class="case-metric"><div class="case-metric-num">−60%</div><div class="case-metric-desc">Product returns</div></div>
-          <div class="case-metric"><div class="case-metric-num">+35%</div><div class="case-metric-desc">Conversion rate</div></div>
-          <div class="case-metric"><div class="case-metric-num">4.9★</div><div class="case-metric-desc">Customer rating</div></div>
+          <div class="case-metric"><div class="case-metric-num">+40%</div><div class="case-metric-desc">Increase in sales</div></div>
+          <div class="case-metric"><div class="case-metric-num">−50%</div><div class="case-metric-desc">Pre-sale enquiries</div></div>
+          <div class="case-metric"><div class="case-metric-num">3×</div><div class="case-metric-desc">Time on product page</div></div>
         </div>
-        <a href="#" class="case-link">Read full case study →</a>
+        <a href="project-fire-extinguisher.html" class="case-link">Read full case study →</a>
       </div>
     </div>
+
+    <!-- CASE STUDY 2 — ELITE GLUTE ISOLATOR -->
     <div class="case-study-card reveal">
       <div class="case-left">
-        <div class="case-project">Furniture Retailer</div>
-        <span class="case-industry">Home Decor</span>
+        <div class="case-project">Elite Glute Isolator</div>
+        <span class="case-industry">Gym Apparatus Manufacturing</span>
         <div class="case-challenge-label">The challenge</div>
-        <p>An online furniture brand struggling with low add-to-cart rates and high bounce on product pages. We delivered a full AR viewer and 360° configurator with fabric swatch previews, room placement via WebXR, and a Shopify-native integration.</p>
-        <div class="case-tech"><span class="case-tech-tag">WebXR</span><span class="case-tech-tag">AR</span><span class="case-tech-tag">360°</span><span class="case-tech-tag">Shopify</span></div>
+        <p>Jarrod Weymar, founder of Elite Glute Isolator, sells premium gym apparatus to fitness enthusiasts who care deeply about the look and feel of their equipment. Customers wanted to personalise their machine — choosing seat colour, upright pole finish, and other visual details — but had no way to visualise the end result before ordering. This led to order uncertainty, buyer hesitation, and post-purchase disappointment when the product didn't match expectations.</p>
+        <p>OTG Tech Hub built a fully interactive 3D configurator that lets customers customise every colour element of their Elite Glute Isolator in real time, zoom in to inspect details, rotate 360°, and preview the exact finished product before placing their order — dramatically improving purchase confidence.</p>
+        <div class="case-tech">
+          <span class="case-tech-tag">Three.js</span>
+          <span class="case-tech-tag">WebGL</span>
+          <span class="case-tech-tag">React</span>
+          <span class="case-tech-tag">Linkuweb</span>
+          <span class="case-tech-tag">360° View</span>
+        </div>
       </div>
       <div class="case-right">
         <div class="results-label">Results</div>
         <div class="case-metrics">
-          <div class="case-metric"><div class="case-metric-num">+40%</div><div class="case-metric-desc">Add-to-cart rate</div></div>
-          <div class="case-metric"><div class="case-metric-num">−45%</div><div class="case-metric-desc">Bounce rate</div></div>
-          <div class="case-metric"><div class="case-metric-num">3.2×</div><div class="case-metric-desc">Session duration</div></div>
+          <div class="case-metric"><div class="case-metric-num">+35%</div><div class="case-metric-desc">Increase in sales</div></div>
+          <div class="case-metric"><div class="case-metric-num">2.5×</div><div class="case-metric-desc">Time on product page</div></div>
+          <div class="case-metric"><div class="case-metric-num">−30%</div><div class="case-metric-desc">Post-purchase complaints</div></div>
         </div>
-        <a href="#" class="case-link">Read full case study →</a>
+        <a href="project-elite-glute.html" class="case-link">Read full case study →</a>
       </div>
     </div>
+
+    <!-- CASE STUDY 3 — DE WAEL JEWELLERY -->
     <div class="case-study-card reveal">
       <div class="case-left">
-        <div class="case-project">Auto Manufacturer</div>
-        <span class="case-industry">Automotive</span>
+        <div class="case-project">De Wael Jewellery Atelier</div>
+        <span class="case-industry">Luxury Jewellery / Retail</span>
         <div class="case-challenge-label">The challenge</div>
-        <p>A European automotive group needed a showroom-quality configurator for their dealer network and direct-to-consumer site — supporting 120+ trim combinations, real-time paint reflection, and a shareable link for sales follow-ups.</p>
-        <div class="case-tech"><span class="case-tech-tag">Three.js</span><span class="case-tech-tag">PBR Materials</span><span class="case-tech-tag">Custom API</span></div>
+        <p>Matthias at De Wael, a Belgium-based fine jewellery atelier, needed a way for customers to design and customise bespoke rings online — selecting stone shapes, stone sizes, metal colours, band styles, side stones, and halo options — before committing to a bespoke commission. The traditional approach of email back-and-forth with sketches was slow, expensive, and led to misunderstandings that resulted in costly revisions after production had already started.</p>
+        <p>OTG Tech Hub built a sophisticated real-time 3D ring configurator with photorealistic PBR materials, embedded seamlessly into their Squarespace storefront via Code Blocks — giving customers a true-to-life preview of their bespoke ring before a single stone was set.</p>
+        <div class="case-tech">
+          <span class="case-tech-tag">Three.js</span>
+          <span class="case-tech-tag">WebGL</span>
+          <span class="case-tech-tag">Squarespace</span>
+          <span class="case-tech-tag">PBR Materials</span>
+          <span class="case-tech-tag">React Three Fiber</span>
+        </div>
       </div>
       <div class="case-right">
         <div class="results-label">Results</div>
         <div class="case-metrics">
-          <div class="case-metric"><div class="case-metric-num">2×</div><div class="case-metric-desc">Time on page</div></div>
-          <div class="case-metric"><div class="case-metric-num">+58%</div><div class="case-metric-desc">Quote requests</div></div>
-          <div class="case-metric"><div class="case-metric-num">−30%</div><div class="case-metric-desc">Sales cycle length</div></div>
+          <div class="case-metric"><div class="case-metric-num">−65%</div><div class="case-metric-desc">Design revision requests</div></div>
+          <div class="case-metric"><div class="case-metric-num">+45%</div><div class="case-metric-desc">Bespoke order conversions</div></div>
+          <div class="case-metric"><div class="case-metric-num">4×</div><div class="case-metric-desc">Engagement on product pages</div></div>
         </div>
         <a href="#" class="case-link">Read full case study →</a>
       </div>
@@ -124,7 +156,7 @@
 </div>
 
 <footer class="footer"><div class="container footer-inner">
-<div class="footer-logo"><img src="https://res.cloudinary.com/dcluwovzm/image/upload/v1780544190/logo-removebg-preview_u4eqe4.png" alt="OTG Tech Hub" height="200" /></div>    <nav class="footer-nav">
+  <div class="footer-logo"><img src="https://res.cloudinary.com/dcluwovzm/image/upload/v1780544190/logo-removebg-preview_u4eqe4.png" alt="OTG Tech Hub" height="36" /></div>
   <nav class="footer-nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="services.html">Services</a><a href="case-studies.html">Case Studies</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
   <div class="footer-copy">© 2026 OTG Tech Hub. All rights reserved.</div>
 </div></footer>
