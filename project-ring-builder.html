@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>3D Ring Builder — OTG Tech Hub</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+<link rel="stylesheet" href="_shared.css" />
+<style>
+.project-hero { padding:130px 0 0; background:var(--surface2); border-bottom:1px solid var(--border2); }
+.project-hero-inner { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+.project-hero-text { padding-bottom:60px; }
+.back-link { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color:var(--muted2); margin-bottom:24px; transition:color 0.2s; }
+.back-link:hover { color:var(--accent); }
+.project-hero-text h1 { font-family:var(--font-display); font-size:clamp(28px,4vw,48px); font-weight:800; line-height:1.1; margin-bottom:16px; }
+.project-hero-text h1 span { color:var(--accent); }
+.project-hero-text p { font-size:16px; color:var(--muted2); line-height:1.7; margin-bottom:28px; max-width:480px; }
+.project-tags { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:32px; }
+.project-tag { font-size:11px; font-weight:600; letter-spacing:0.05em; color:var(--accent); padding:5px 14px; background:var(--accent-dim); border:1px solid var(--border); border-radius:100px; }
+.project-buttons { display:flex; gap:12px; flex-wrap:wrap; }
+.project-hero-image { height:100%; min-height:420px; display:flex; align-items:flex-end; justify-content:center; overflow:hidden; }
+.project-hero-image img { width:100%; height:420px; object-fit:cover; object-position:top; border-radius:var(--radius) var(--radius) 0 0; }
+.project-overview { padding:80px 0; }
+.overview-grid { display:grid; grid-template-columns:1.5fr 1fr; gap:60px; }
+.overview-text h2 { font-family:var(--font-display); font-size:28px; font-weight:800; margin-bottom:20px; }
+.overview-text h2 span { color:var(--accent); }
+.overview-text p { font-size:15px; color:var(--muted2); line-height:1.8; margin-bottom:16px; }
+.overview-meta { display:grid; gap:16px; }
+.meta-card { background:var(--surface); border:1px solid var(--border2); border-radius:var(--radius-sm); padding:20px; }
+.meta-label { font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+.meta-value { font-size:14px; font-weight:600; color:var(--white); }
+.meta-value a { color:var(--accent); }
+.meta-value a:hover { text-decoration:underline; }
+.results-section { padding:60px 0; background:var(--surface2); }
+.results-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.result-card { background:var(--surface); border:1px solid var(--border2); border-radius:var(--radius); padding:32px; text-align:center; position:relative; overflow:hidden; transition:border-color 0.25s,transform 0.25s; }
+.result-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--accent),transparent); }
+.result-card:hover { border-color:var(--accent); transform:translateY(-3px); }
+.result-num { font-family:var(--font-display); font-size:42px; font-weight:800; color:var(--accent); line-height:1; margin-bottom:8px; }
+.result-label { font-size:13px; color:var(--muted2); }
+.features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.feature-card { background:var(--surface); border:1px solid var(--border2); border-radius:var(--radius); padding:28px; transition:border-color 0.25s,transform 0.25s; }
+.feature-card:hover { border-color:var(--accent); transform:translateY(-3px); }
+.feature-icon { width:46px; height:46px; border-radius:10px; background:var(--accent-dim); display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+.feature-icon i { font-size:22px; color:var(--accent); }
+.feature-card h3 { font-family:var(--font-display); font-size:15px; font-weight:700; margin-bottom:8px; }
+.feature-card p { font-size:13px; color:var(--muted2); line-height:1.6; }
+.project-image-full { padding:60px 0 80px; }
+.project-image-full img { width:100%; max-height:500px; object-fit:cover; border-radius:var(--radius); border:1px solid var(--border2); }
+.project-cta { padding:80px 0; background:var(--surface2); text-align:center; }
+.project-cta h2 { font-family:var(--font-display); font-size:clamp(22px,4vw,36px); font-weight:800; margin-bottom:12px; }
+.project-cta p { color:var(--muted2); margin-bottom:32px; }
+.cta-buttons { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+@media(max-width:768px){
+  .project-hero-inner { grid-template-columns:1fr; }
+  .project-hero-image { min-height:260px; }
+  .project-hero-image img { height:260px; }
+  .overview-grid { grid-template-columns:1fr; }
+  .results-grid { grid-template-columns:1fr; }
+  .features-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><img src="https://res.cloudinary.com/dcluwovzm/image/upload/v1780544190/logo-removebg-preview_u4eqe4.png" alt="OTG Tech Hub" height="40" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary nav-cta">Book a Demo</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="project-hero">
+  <div class="container project-hero-inner">
+    <div class="project-hero-text reveal">
+      <a href="portfolio.html" class="back-link"><i class="ti ti-arrow-left"></i> Back to Portfolio</a>
+      <div class="section-label">Jewellery</div>
+      <h1>3D Ring <span>Builder</span></h1>
+      <p>A sophisticated real-time 3D ring configurator built for Huis De Waele, a fine jewellery atelier in Belgium. Customers can design their bespoke ring by selecting stone shape, metal colour, band style, and side stone options — with photorealistic PBR rendering updating live as they customise.</p>
+      <div class="project-tags">
+        <span class="project-tag">Next.js</span>
+        <span class="project-tag">TypeScript</span>
+        <span class="project-tag">Tailwind CSS</span>
+        <span class="project-tag">JavaScript</span>
+        <span class="project-tag">Three.js</span>
+        <span class="project-tag">PBR Materials</span>
+      </div>
+      <div class="project-buttons">
+        <a href="https://huisdewael.netlify.app/rings" target="_blank" class="btn btn-primary">
+          <i class="ti ti-external-link"></i> View Live Project
+        </a>
+        <a href="contact.html" class="btn btn-ghost">
+          <i class="ti ti-calendar"></i> Build Something Similar
+        </a>
+      </div>
+    </div>
+    <div class="project-hero-image reveal">
+      <img src="https://res.cloudinary.com/dcluwovzm/image/upload/v1790253922/3D_ring_model_pmxf3q.png" alt="3D Ring Builder" />
+    </div>
+  </div>
+</div>
+
+<div class="results-section">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:40px;text-align:center">
+      <div class="section-label" style="justify-content:center">Results</div>
+      <h2 class="section-title" style="margin-bottom:0">What this project <span>achieved</span></h2>
+    </div>
+    <div class="results-grid">
+      <div class="result-card reveal">
+        <div class="result-num">−65%</div>
+        <div class="result-label">Design revision requests after launch</div>
+      </div>
+      <div class="result-card reveal">
+        <div class="result-num">+45%</div>
+        <div class="result-label">Bespoke order conversions</div>
+      </div>
+      <div class="result-card reveal">
+        <div class="result-num">4×</div>
+        <div class="result-label">Engagement on product pages</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="project-overview">
+  <div class="container">
+    <div class="overview-grid">
+      <div class="overview-text reveal">
+        <h2>About this <span>project</span></h2>
+        <p>Matthias at Huis De Waele, a Belgium-based fine jewellery atelier, needed a way for customers to design and customise bespoke rings online before committing to a commission. The traditional approach of email back-and-forth with sketches was slow and costly — leading to misunderstandings that resulted in expensive revisions after production had already started.</p>
+        <p>OTG Tech Hub built a sophisticated real-time 3D ring configurator using Next.js, TypeScript, and Three.js with photorealistic PBR materials. Customers can select stone shape, stone size, metal colour, band style, side stones, and halo options — with the ring updating live in 3D as they design. The configurator is embedded seamlessly into the Huis De Waele website, giving customers a true-to-life preview of their bespoke ring before a single stone is set.</p>
+        <p>The result was a dramatic reduction in design revision requests, a significant increase in bespoke order conversions, and a customer experience that now sets Huis De Waele apart from every competitor in the Belgian fine jewellery market.</p>
+      </div>
+      <div class="overview-meta reveal">
+        <div class="meta-card">
+          <div class="meta-label">Client</div>
+          <div class="meta-value">Matthias — Huis De Waele</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">Industry</div>
+          <div class="meta-value">Fine Jewellery / Luxury Retail</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">Tech Stack</div>
+          <div class="meta-value">Next.js · TypeScript · Tailwind · Three.js · PBR</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">Live Project</div>
+          <div class="meta-value">
+            <a href="https://huisdewael.netlify.app/rings" target="_blank">huisdewael.netlify.app/rings <i class="ti ti-external-link" style="font-size:12px"></i></a>
+          </div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">Location</div>
+          <div class="meta-value">Belgium 🇧🇪</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="background:var(--surface2);padding:80px 0">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:40px">
+      <div class="section-label">What we built</div>
+      <h2 class="section-title" style="margin-bottom:0">Key <span>features</span></h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="ti ti-diamond"></i></div>
+        <h3>Bespoke Ring Design</h3>
+        <p>Customers select stone shape, size, metal colour, band style, side stones, and halo options to design their unique ring from scratch.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="ti ti-3d-cube-sphere"></i></div>
+        <h3>Photorealistic PBR Rendering</h3>
+        <p>Physically Based Rendering ensures gold, platinum, and gemstones look true-to-life — customers see exactly what they'll receive.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="ti ti-rotate-3d"></i></div>
+        <h3>360° Ring View</h3>
+        <p>Customers can rotate and zoom the ring in full 360° to inspect every detail — the band, the setting, and the stone from every angle.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="ti ti-brand-nextjs"></i></div>
+        <h3>Next.js Performance</h3>
+        <p>Built with Next.js and TypeScript for fast page loads, server-side rendering, and a smooth, responsive experience across all devices.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="ti ti-device-mobile"></i></div>
+        <h3>Mobile Optimised</h3>
+        <p>Fully responsive and touch-friendly — the ring builder works smoothly on mobile and tablet with pinch-to-zoom and swipe controls.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="ti ti-share"></i></div>
+        <h3>Design Sharing</h3>
+        <p>Customers can share their ring design with a unique link — making it easy to get a second opinion or discuss with their partner before ordering.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="project-image-full">
+  <div class="container">
+    <img src="https://res.cloudinary.com/dcluwovzm/image/upload/v1790251255/3D_ring_l2w2gw.png" alt="3D Ring Builder Full View" class="reveal" />
+  </div>
+</div>
+
+<div class="project-cta">
+  <div class="container reveal">
+    <h2>Want a configurator like this?</h2>
+    <p>Book a free 30-minute demo and let's talk about what we can build for your product.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn btn-primary"><i class="ti ti-calendar"></i> Book a Free Demo</a>
+      <a href="portfolio.html" class="btn btn-ghost">View More Projects</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-logo"><img src="https://res.cloudinary.com/dcluwovzm/image/upload/v1780544190/logo-removebg-preview_u4eqe4.png" alt="OTG Tech Hub" height="200" /></div>
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="footer-copy">© 2026 OTG Tech Hub. All rights reserved.</div>
+  </div>
+</footer>
+<script src="_shared.js"></script>
+</body>
+</html>
